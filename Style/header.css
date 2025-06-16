@@ -1,0 +1,110 @@
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .brand-symbol {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--main-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .navigation ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navigation ul li {
+            margin-left: 30px;
+        }
+        
+        .navigation ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition-speed);
+            position: relative;
+        }
+        
+        .navigation ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary-color);
+            transition: var(--transition-speed);
+        }
+        
+        .navigation ul li a:hover {
+            color: var(--main-color);
+        }
+        
+        .navigation ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .action-button {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-speed);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .primary-button {
+            background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }

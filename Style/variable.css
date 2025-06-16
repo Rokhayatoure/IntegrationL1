@@ -1,0 +1,74 @@
+  :root {
+            --main-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+            --dark-text: #2E2E2E;
+            --light-bg: #F7F9FC;
+            --transition-speed: all 0.3s ease;
+        }
+        /* "sélectionne tous les éléments HTML */
+        /* margin: 0; → supprime les marges externes par défaut.
+
+padding: 0; → supprime les espacements internes par défaut.
+
+box-sizing: border-box; → permet de contrôler la taille des boîtes en incluant le padding et la border dans width et height. (Très utile en mise en page). */
+        * {
+            margin: 0;  
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+         
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            /* // Espace entre les lignes */
+            line-height: 1.6;  
+
+            /* overflow-x: hidden;  */
+        }
+
+
+
+        /* Conteneur principal centré avec marges internes */
+.page-container {
+    width: 90%; /* Le conteneur prend 90% de la largeur de l'écran */
+    max-width: 1200px; /* Mais ne dépasse jamais 1200px, même sur grand écran */
+    margin: 0 auto; /* Centre horizontalement le conteneur */
+    padding: 0 15px; /* Espace intérieur de 15px à gauche et à droite */
+}
+
+/* Section avec espacement haut et bas */
+.content-section {
+    padding: 80px 0; /* 80px en haut et en bas, 0 sur les côtés */
+}
+
+/* Conteneur du titre de section, centré avec position relative */
+.section-heading {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-bottom: 50px; /* Espace sous le titre */
+    position: relative; /* Nécessaire pour positionner le ::after */
+}
+
+/* Style du titre h2 dans une section */
+.section-heading h2 {
+    font-size: 2.5rem; /* Taille du texte (≈ 40px) */
+    color: var(--dark-text); /* Couleur du texte avec une variable CSS */
+    text-transform: uppercase; /* Transforme le texte en MAJUSCULES */
+    letter-spacing: 1px; /* Espace entre les lettres */
+    margin-bottom: 15px; /* Espace sous le h2 avant la ligne décorative */
+}
+
+/* Ligne décorative sous le titre */
+.section-heading::after {
+    content: ''; /* Nécessaire pour créer un pseudo-élément */
+    position: absolute; /* Positionné par rapport à .section-heading */
+    bottom: -10px; /* Placé juste sous le h2 (10px en dessous) */
+    left: 50%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Correction du centrage parfait */
+    width: 80px; /* Longueur de la ligne décorative */
+    height: 4px; /* Épaisseur de la ligne */
+    background: linear-gradient(90deg, var(--main-color), var(--secondary-color)); /* Dégradé entre deux couleurs */
+    border-radius: 2px; /* Bords arrondis pour un look plus doux */
+}

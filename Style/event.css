@@ -1,0 +1,73 @@
+        .events-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* //creation de la ligne */
+        .events-container::after {
+              
+            content: '';    /* Nécessaire pour créer la ligne verticale */
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            /* S'étend du haut (top: 0) au bas (bottom: 0) du conteneur */
+            top: 0;
+            bottom: 0;
+            left: 50%; /* Positionne la ligne au centre du conteneur */
+            margin-left: -2px;
+        }
+        
+        .event-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .event-item:nth-child(odd) {
+              /* Événements impairs à gauche */
+            left: 0;
+        }
+        
+        .event-item:nth-child(even) {
+              /* Événements pairs à droite */
+            left: 50%;
+        }
+        
+        .event-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        /* Crée le point coloré qui relie chaque événement à la ligne centrale. */
+        .event-item::after {
+          
+            content: '';   /* Obligatoire pour les pseudo-éléments */ 
+
+            position: absolute; /* Positionne l'élément */
+            width: 20px; /* Largeur */
+            height: 20px;
+            background-color: var(--main-color);
+            border: 4px solid var(--secondary-color);
+            top: 50%; /* Centre verticalement */
+            border-radius: 50%; /* Forme circulaire */
+            z-index: 1; /* Positionne l'élément en dessus de la ligne */
+        }
+        /* Positionne les points sur la ligne en fonction du côté de l'événement. */
+        
+        .event-item:nth-child(odd)::after {
+            right: -10px;
+            transform: translateY(-50%);
+        }
+        
+        .event-item:nth-child(even)::after {
+            left: -10px;
+            transform: translateY(-50%);
+        }
+        
+        .event-date {
+            font-weight: 600;
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
